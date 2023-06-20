@@ -1,7 +1,7 @@
 package uz.pdp.cambridgelc.entity.user;
 
 public enum Role {
-    ADMIN,
-    STUDENT,
-    TEACHER,
+    ADMIN, // 1
+    STUDENT, // 2
+    TEACHER, // 3
 }

@@ -25,6 +25,7 @@ public class UserEntity extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+    private Boolean active = true;
 
 
     @ManyToMany
