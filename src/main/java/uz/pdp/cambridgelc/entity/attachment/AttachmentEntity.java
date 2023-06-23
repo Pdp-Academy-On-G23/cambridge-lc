@@ -13,5 +13,5 @@ import uz.pdp.cambridgelc.entity.BaseEntity;
 public class AttachmentEntity extends BaseEntity {
     private String name;
     private Long size;
-    private String content_type;
+    private String contentType;
 }
