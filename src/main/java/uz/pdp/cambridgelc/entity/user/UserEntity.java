@@ -27,7 +27,6 @@ public class UserEntity extends BaseEntity {
     private Role role;
     private Boolean active = true;
 
-
     @ManyToMany
     @JoinTable(
             name = "users_courses",
@@ -35,4 +34,9 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     private Set<CourseEntity> courses;
+
+    @PrePersist
+    public void setDefaultActive() {
+        this.active = false;
+    }
 }
