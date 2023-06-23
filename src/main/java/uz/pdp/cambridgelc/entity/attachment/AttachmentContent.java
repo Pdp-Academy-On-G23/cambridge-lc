@@ -1,6 +1,8 @@
 package uz.pdp.cambridgelc.entity.attachment;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToOne;
 import lombok.*;
 import uz.pdp.cambridgelc.entity.BaseEntity;
@@ -14,6 +16,6 @@ import uz.pdp.cambridgelc.entity.BaseEntity;
 public class AttachmentContent extends BaseEntity {
     private byte[] mainContent;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private AttachmentEntity attachment;
 }
