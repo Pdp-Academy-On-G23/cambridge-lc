@@ -25,7 +25,7 @@ public class UserEntity extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-
+    private Boolean active = true;
 
     @ManyToMany
     @JoinTable(
@@ -34,4 +34,9 @@ public class UserEntity extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     private Set<CourseEntity> courses;
+
+    @PrePersist
+    public void setDefaultActive() {
+        this.active = false;
+    }
 }
